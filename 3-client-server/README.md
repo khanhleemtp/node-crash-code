@@ -1,0 +1,28 @@
+IP Addresses
+
+Mỗi máy có 1 IP định danh duy nhất => Khó nhớ => Domain
+Nhập domain => find ip => find computer saving website => send request
+
+                GET REQUEST
+BROWSER  ==========================> Host 216.58.216.164
+            -> Look-up IP Address
+            associated with that domain
+
+        <=============================
+                <- HTML
+
+        HTTP - Hyper-text tranfer protocol
+
+        -> Server sd HTTP giao tiếp vs Client
+
+
+=============================Local host=====================================
++ Localhost is like a domain name on the web: vd google.com
++ Localhost =IP==> 127.0.0.1 ==> Own computer(server with name localhost)
++ Server listen request from my computer
+
+ =========================PORT Number===========================
+ + Port number are like 'doors' into a computer
+
+ localhost:3000
+ + Port để trình duyệt biết kết nối đến máy tính của tôi qua số cổng cụ thể này là nơi máy chủ lắng nghe request
