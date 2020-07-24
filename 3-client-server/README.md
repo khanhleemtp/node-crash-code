@@ -33,3 +33,9 @@ BROWSER  ==========================> Host 216.58.216.164
         + npm init
         + script: dependencies of my project
  +Install package locally npm install --save 
+
+ ============================Express===========================================
+ + Khi thêm post, get request ... mọi thứ khá lộn xộn
+ => Framework: Express giúp dễ dàng quản lí yêu cầu logic phía máy chủ và 
+ phản hồi 1 cách ez, cập nhật, mở rộng
+ => clean code
