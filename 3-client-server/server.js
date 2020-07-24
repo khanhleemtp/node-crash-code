@@ -1,12 +1,26 @@
 const http = require('http');
 const fs = require('fs');
+const _ = require('lodash');
+
 // instance server -> future Web socket
 // callback đc chạy khi có yêu cầu đến server  
 // req obj tải thông tin request vd URL được yêu cầu,
 // res obj send response từ server => browser 
 const server = http.createServer((req, res) => {
-    console.log(req.url, req.method);
+    // console.log(req.url, req.method);
     
+    // lodash
+    const num = _.random(0, 30);
+    console.log(num);
+
+    // Lodash cho Hàm chạy 1 lần
+    const greet = _.once(() => {
+      console.log('Hello')  
+    })
+
+    greet();
+    greet();
+
     //set header content type
     res.setHeader('Content-type', 'text/html'); // html, json, text-plain
     // res.write('<head><link rel="stylesheet" href="#" /></head>');
@@ -24,7 +38,7 @@ const server = http.createServer((req, res) => {
             path += 'about.html';
             res.statusCode = 200;
             break;
-        case '/about-me': 
+        case '/about-blah': 
             res.statusCode = 301;
             res.setHeader('Location', '/about');
             break;            

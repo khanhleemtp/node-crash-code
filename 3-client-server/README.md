@@ -26,3 +26,10 @@ BROWSER  ==========================> Host 216.58.216.164
 
  localhost:3000
  + Port để trình duyệt biết kết nối đến máy tính của tôi qua số cổng cụ thể này là nơi máy chủ lắng nghe request
+
+ ==============================NPM====================================
+ + Global package => npm i g packageName => sd bất cứ đâu trên máy tính
+ + My package: package.json 
+        + npm init
+        + script: dependencies of my project
+ +Install package locally npm install --save 
