@@ -50,9 +50,33 @@ BROWSER  ==========================> Host 216.58.216.164
 
  + Request ... => app.use(func) => app.get('/', func) => app.use(func)
   => app.use(func) .... => response
-
+ + Lưu ý: Middleware chạy từ trên xuống dưới
+ Khi server reponse là kết thúc các middleware sau :D 
  + Example
         + Logger middleware to log details of every request
         + Authentication check middleware for protected routes
         + Middleware to parse JSON data from requests
         + Return 404 Pages      
+==============================MongoDB========================================
+ +VD Blog Collection > Blog Document {
+        "id": ObjectId(12345);
+        "title": "Open party"
+ }
+ + Mongoose is an ODM library - Object Document Mapping library
+        ====Mongoose====
+ Mongoose-> User model User.get(), User.findById()
+         -> Blog model Blog.deleteOne()
+
+ Schemas & Models
+ +Schemas defines the structure of a type of data / document
+  -Properties & property types
+
+  User Schema                               Blog Schema
+     - name (string), required                    - title (string), required
+     - age (number)                               - snippet (string), required
+     - bio (string), required                     - body (string), required
+
++Models allow us to communicate with database collections
+                    get, save, delete, etc
+  Blog Model        --------------------> Database Collection
+  (Blog Schema)
