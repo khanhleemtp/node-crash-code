@@ -39,3 +39,20 @@ BROWSER  ==========================> Host 216.58.216.164
  => Framework: Express giúp dễ dàng quản lí yêu cầu logic phía máy chủ và 
  phản hồi 1 cách ez, cập nhật, mở rộng
  => clean code
+
+ ===============================Template Engine===================================
+ + EJS Template is are processed through the EJS view engine on the server
+
+ + EJS => EJS View Engine => HTML => Browser 
+ => Server-side rendering 
+
+ =============================Middleware==========================================
+
+ + Request ... => app.use(func) => app.get('/', func) => app.use(func)
+  => app.use(func) .... => response
+
+ + Example
+        + Logger middleware to log details of every request
+        + Authentication check middleware for protected routes
+        + Middleware to parse JSON data from requests
+        + Return 404 Pages      
