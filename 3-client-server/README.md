@@ -107,3 +107,8 @@ Route Parameters
 + MVC is way of structuring our code & files
 + Keep code more modular, reuseable & easier to read
 Model => Controller <= Views
+============================Future ==========================================
++ Node.js with Firebase Admin
++ Node.js Authentication
++ Handing payments with Node.js & Striple
++ Full stack project cource (with either  Vue or React)
