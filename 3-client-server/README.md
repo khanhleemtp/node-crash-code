@@ -101,3 +101,9 @@ Route Parameters
        + localhost:3000/blogs/:id 
        + localhost:3000/blogs/12345
        + localhost:3000/blogs/abc
+
+================================MVC==========================================
++ Stands for Model, View, Controller
++ MVC is way of structuring our code & files
++ Keep code more modular, reuseable & easier to read
+Model => Controller <= Views
