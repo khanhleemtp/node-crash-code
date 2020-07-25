@@ -80,3 +80,24 @@ BROWSER  ==========================> Host 216.58.216.164
                     get, save, delete, etc
   Blog Model        --------------------> Database Collection
   (Blog Schema)
+
+
+============================GET, POST,DELETE==================================
+REQUEST TYPE: 
+ GET request to get a resource
+ POST request to create new data (eg a new blog)
+ DELETE request to delete data (eg delete a blog)
+ PUT request to update data (eg update a blog)
+
++ localhost:3000/blogs GET
++ localhost:3000/blogs/create GET
++ localhost:3000/blogs POST
++ localhost:3000/blogs/:id GET
++ localhost:3000/blogs/:id DELETE
++ localhost:3000/blogs/:id PUT
+
+Route Parameters
++ The variable parts of the route that may change value
+       + localhost:3000/blogs/:id 
+       + localhost:3000/blogs/12345
+       + localhost:3000/blogs/abc

@@ -25,7 +25,7 @@ app.set('view engine', 'ejs');
 // middleware static files
 // 
 app.use(express.static('public'));
-
+app.use(express.urlencoded({ extended: true }))
 
 // morgan-read http request
 app.use(morgan('dev'));
@@ -98,12 +98,54 @@ app.get('/blogs', (req, res) => {
         })
 })
 
-
 app.get('/blogs/create', (req, res) => {
     res.render('create', {
         title: 'Create a new Blogs'
     })
 })
+
+app.post('/blogs', (req, res) => {
+    console.log(req.body);
+    const blog = new Blog(req.body);
+
+    blog.save()
+        .then(result => {
+            res.redirect('/blogs');
+        })
+        .catch(err => {
+            console.log(err);
+        })
+})
+
+app.get('/blogs/:id', (req, res) => {
+    const id = req.params.id;
+    Blog.findById(id)
+        .then(result => {
+            res.render('details', { blog: result, title: 'Blog Details' });
+        })
+        .catch(err => console.log(err))    
+})
+
+app.delete('/blogs/:id', (req, res) => {
+    const id = req.params.id;
+
+    Blog.findByIdAndDelete(id)
+        .then(result => {
+            // phản hồi điển hình khi dùng api
+            res.json({ redirect: '/blogs' });
+            // Why you don't redirect in here ?
+            // When you send AJAX request in front-end all chúng ta đang 
+            // thực hiện với JS chứ k phải web form
+            // When we send that type of request in node we cannot use a redirect
+            // as a response
+            // => We have send maybe JSON or textdata back to browser and
+            // that json data is gonna have a redirect property
+            // we receive that data back over here we're gonna look at that
+            // same URL 
+        })
+        .catch(err => console.log(err))
+})
+
 
 // 404 pages
 app.use((req, res) => {
